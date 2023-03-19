@@ -16,7 +16,7 @@ Date <- as.Date(temp)
 
 industry<-colnames(data)[2:18]
 
-#QUESTION 1
+
 # compute average return, logreturn, volatility for each industry
 avgreturn<-NULL
 vol<-NULL
@@ -52,7 +52,7 @@ for (i in (1:17)){
 lret <- data.frame(logreturn)
 colnames(lret) <- colnames(data)
 
-# Question 2.1
+
 lretPorfolio1 <- 1/17*(rowSums(lret[,2:18]))
 # Plot cumulative log returns
 CrPorfoliolret1 <- cumsum(lretPorfolio1)
@@ -63,7 +63,7 @@ meanpfret1 <- mean(pfret1)*252
 stdpfret1 <- sd(pfret1)*sqrt(252)
 sharpe1 <- meanpfret1/stdpfret1
 
-# Question 2.2
+
 # Compute weights
 weight <- 1/vol
 normalizedw <- weight/sum(weight)
@@ -78,7 +78,7 @@ meanpfret2 <- mean(pfret2)*252
 stdpfret2 <- sd(pfret2)*sqrt(252)
 sharpe2 <- meanpfret2/stdpfret2
 
-# Question 2.3
+
 # Compute 12 month momentum matrix
 rebal_freq <- 21 # Rebalance once a month
 MOM <- matrix(NA, nrow = dim(data)[1], ncol = dim(data)[2]) # Momentum matrix
@@ -193,16 +193,16 @@ for (i in (250:15626)){
   pflogreturn[i + 1] <- alpha * lretPorfolio1[i + 1] + (1 - alpha) * log((1 + 0.03)^(1/252))
 }
 
-delete NaN in first 250 rows due to momentum calculation
+#delete NaN in first 250 rows due to momentum calculation
 pfreturn <- pfreturn[251:15627]
 pflogreturn <- pflogreturn[251:15627]
 
-compute mean, standard deviation, sharpe ratio
+#compute mean, standard deviation, sharpe ratio
 meanpfret4 <- mean(pfreturn) * 252
 stdpfret4 <- sd(pfreturn) * sqrt(252)
 sharpe4 <- meanpfret4 / stdpfret4
 
-plot cumulative log return
+#plot cumulative log return
 CrPorfoliolret4 <- cumsum(pflogreturn)
 plot(Date[251:15627], CrPorfoliolret4, type = 'l', ylab = 'Portfolio log returns', main = 'Cumulative log returns for a normalized weighted portfolio with alpha share on risky asset')
 
