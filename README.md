@@ -4,3 +4,6 @@ Volatility targeting and Investing α percentage are the strategies applied to t
 
 The R code uploads the dataset. Different investments strategies are then implemented to see the effect on portfolio returns. Plots are use to visualize the rerturns
 gained through different strategies.
+
+# Result summary table:
+<img width="553" alt="image" src="https://github.com/ADT86/portfolio-analysis/assets/102257932/8741bccd-5f9a-4992-84c6-c096b9f8ce76">
