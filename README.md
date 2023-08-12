@@ -29,7 +29,7 @@ This repository contains an analysis of 17 industry portfolios. The goal is to c
 1. **Clone the Repository**:
 
 2. **Data**:
-Ensure `Industry17PortfoliosDaily.csv` is in the root directory or adjust the path in the script.
+Ensure `industries17modified.csv` is in the root directory or adjust the path in the script.
 
 3. **Run the Analysis**: 
 Use your preferred R environment to run the analysis script.
